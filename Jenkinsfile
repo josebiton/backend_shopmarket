@@ -37,7 +37,7 @@ pipeline {
 
         stage('Compilación de Docker') {
             steps {
-                sh 'docker build -t appmarket .'
+                sh 'docker build -t backend_shopmarket .'
             }
         }
 

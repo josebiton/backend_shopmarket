@@ -35,13 +35,13 @@ pipeline {
         //    }
         //}
 
-        stage('Docker Build') {
+        stage('Compilación de Docker') {
             steps {
-                sh 'docker build -t app-shopMarket .'
+                sh 'docker build -t appShopMarket .'
             }
         }
 
-         stage('Deploy php') {
+         stage('Implementar php') {
             steps {
                 sh 'docker compose up -d'
             }

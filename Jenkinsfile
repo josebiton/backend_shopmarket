@@ -4,7 +4,7 @@ pipeline {
         stages {
             stage('Preparacion') {
                 steps {
-                    git branch: 'main', url: 'https://github.com/Mesias-Caleb/shop2.git'
+                    git branch: 'main', url: 'https://github.com/backend_shopmarket.git'
                     echo 'Obtenido de Github con éxito'
                 }
            }

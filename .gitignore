@@ -76,22 +76,22 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 #-------------------------
 # Test Files
 #-------------------------
-tests/coverage*
+#tests/coverage*
 
 # Don't save phpunit under version control.
-phpunit
+#phpunit
 
 #-------------------------
 # Composer
 #-------------------------
-vendor/
+#vendor/
 
 #-------------------------
 # IDE / Development Files
 #-------------------------
 
 # Modules Testing
-_modules/*
+#_modules/*
 
 # phpenv local config
 .php-version
@@ -123,6 +123,6 @@ nb-configuration.xml
 .vscode/
 
 /results/
-/phpunit*.xml
-/.phpunit.*.cache
+#/phpunit*.xml
+#/.phpunit.*.cache
 

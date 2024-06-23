@@ -4,8 +4,8 @@ pipeline {
         stages {
             stage('Preparacion') {
                 steps {
-                    git branch: 'main', url: 'https://github.com/backend_shopmarket.git'
-                    echo 'Obtenido de Github con éxito'
+                    git branch:'main',url:'https://github.com/backend_shopmarket.git'
+   	       		echo 'Pulled from github successfully'
                 }
            }
         

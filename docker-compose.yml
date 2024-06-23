@@ -1,7 +1,7 @@
 services:
    appphp:
     image: appmarket
-    container_name: appmarket_v1
+    container_name: appmarket_v2
     #restart: always
     ports:
       - 8080:80

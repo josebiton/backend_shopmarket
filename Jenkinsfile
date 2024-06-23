@@ -1,14 +1,13 @@
 pipeline {
     agent any
 
-    stages {
-        
-        stage('Preparacion'){
-            steps {
-                git 'https://github.com/Mesias-Caleb/shop2.git'
-   	       		echo 'Obtenido de Github con éxito'
-            }
-        }
+        stages {
+            stage('Preparacion') {
+                steps {
+                    git branch: 'main', url: 'https://github.com/Mesias-Caleb/shop2.git'
+                    echo 'Obtenido de Github con éxito'
+                }
+        }
         
         stage('Verifica version php'){
             steps {

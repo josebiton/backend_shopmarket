@@ -116,7 +116,7 @@ nb-configuration.xml
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
-.phpintel
+
 /api/
 
 # Visual Studio Code

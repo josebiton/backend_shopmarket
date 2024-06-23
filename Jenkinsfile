@@ -6,8 +6,8 @@ pipeline {
                 steps {
                     git branch: 'main', url: 'https://github.com/Mesias-Caleb/shop2.git'
                     echo 'Obtenido de Github con éxito'
-                }
-        }
+                }
+           }
         
         stage('Verifica version php'){
             steps {
@@ -45,7 +45,6 @@ pipeline {
             steps {
                 sh 'docker compose up -d'
             }
-        }
-       
+        }      
     }
 }

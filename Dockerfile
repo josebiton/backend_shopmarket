@@ -24,10 +24,7 @@ RUN sed -ri -e 's!expose_php = On!expose_php = Off!g' $PHP_INI_DIR/php.ini-produ
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 
-RUN a2enmod rewrite setenvif headers \
-    && a2enconf disable-elb-healthcheck-log \ 
-    && a2dissite * \
-    && a2disconf other-vhosts-access-log
+RUN a2enmod rewrite
 
 
 #composer install

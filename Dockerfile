@@ -42,3 +42,6 @@ RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
 RUN echo "${TZ}" > /etc/timezone
 COPY . /var/www/html/
 RUN chmod -R a+r /var/www/html
+
+RUN chmod -R 755 writable/ 
+RUN chown -R www-data:www-data writable/

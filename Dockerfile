@@ -16,6 +16,10 @@ RUN docker-php-ext-enable zip \
     && docker-php-ext-install soap \
     && docker-php-source delete
 
+RUN apt-get install -y zlib1g-dev libicu-dev g++ \
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl
+
 #disable exposing server information
 RUN sed -ri -e 's!expose_php = On!expose_php = Off!g' $PHP_INI_DIR/php.ini-production \
     && sed -ri -e 's!ServerTokens OS!ServerTokens Prod!g' /etc/apache2/conf-available/security.conf \

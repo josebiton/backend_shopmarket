@@ -32,6 +32,11 @@ RUN a2enmod rewrite
 #composer install
 COPY --from=composer:2.1.9 /usr/bin/composer /usr/bin/composer
 
+RUN apt-get install -y zlib1g-dev libicu-dev g++ \
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl
+
+
 #setup task, for running Taskfiles
 RUN curl -o /tmp/taskfile.tar.gz 'https://oberd-static-media.s3.amazonaws.com/builddeps/task/3.34.1/task_linux_386.tar.gz' \
     && tar -xzf /tmp/taskfile.tar.gz -C /tmp \
@@ -49,6 +54,3 @@ RUN chmod -R a+r /var/www/html
 RUN chmod -R 755 writable/ 
 RUN chown -R www-data:www-data writable/
 
-RUN apt-get install -y zlib1g-dev libicu-dev g++ \
-&& docker-php-ext-configure intl \
-&& docker-php-ext-install intl

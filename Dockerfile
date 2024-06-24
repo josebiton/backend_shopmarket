@@ -8,7 +8,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     zip \
     unzip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get install -y zlib1g-dev libicu-dev g++ \
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl
 RUN pecl install zip pcov
 RUN docker-php-ext-enable zip \
     && docker-php-ext-install pdo_mysql \
@@ -32,9 +34,7 @@ RUN a2enmod rewrite
 #composer install
 COPY --from=composer:2.1.9 /usr/bin/composer /usr/bin/composer
 
-RUN apt-get install -y zlib1g-dev libicu-dev g++ \
-&& docker-php-ext-configure intl \
-&& docker-php-ext-install intl
+
 
 
 #setup task, for running Taskfiles

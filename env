@@ -15,12 +15,13 @@
 #--------------------------------------------------------------------
 
 # CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+ app.baseURL = 'http://ec2-54-86-162-155.compute-1.amazonaws.com/'
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -30,13 +31,13 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+ database.default.hostname = ldatabase-bitoncito.cqqlkrymbtcy.us-east-1.rds.amazonaws.com
+ database.default.database = shopmarket
+ database.default.username = admin
+ database.default.password = jnbb11jsm
+ database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
-# database.default.port = 3306
+ database.default.port = 3306
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4_test

@@ -16,9 +16,7 @@ RUN docker-php-ext-enable zip \
     && docker-php-ext-install soap \
     && docker-php-source delete
 
-RUN apt-get install -y zlib1g-dev libicu-dev g++ \
-&& docker-php-ext-configure intl \
-&& docker-php-ext-install intl
+
 
 #disable exposing server information
 RUN sed -ri -e 's!expose_php = On!expose_php = Off!g' $PHP_INI_DIR/php.ini-production \
@@ -40,6 +38,7 @@ RUN curl -o /tmp/taskfile.tar.gz 'https://oberd-static-media.s3.amazonaws.com/bu
     && mv /tmp/task /usr/local/bin/task \
     && chmod +x /usr/local/bin/task
 
+
 RUN apt-get install -y tzdata
 ENV TZ America/Lima
 RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
@@ -49,3 +48,7 @@ RUN chmod -R a+r /var/www/html
 
 RUN chmod -R 755 writable/ 
 RUN chown -R www-data:www-data writable/
+
+RUN apt-get install -y zlib1g-dev libicu-dev g++ \
+&& docker-php-ext-configure intl \
+&& docker-php-ext-install intl
